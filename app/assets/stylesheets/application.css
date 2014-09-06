@@ -18,3 +18,18 @@
 #body {
 	margin: 5% 1% 0;
 }
+.user-img{
+	border-radius: 50%;
+}
+.profile{
+	width: 200px;
+	height: 200px;
+}
+#sidebar{
+	width: 20%;
+	float: left;
+}
+#main{
+	width: 70%;
+	float: left;
+}
