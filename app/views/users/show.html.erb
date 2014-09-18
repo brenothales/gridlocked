@@ -1,4 +1,4 @@
-<div id="sidebar">
+<div class="col-md-4" id="user-sidebar">
 	<%= image_tag (@user.userphoto) , class: "user-img profile", alt: "Image of #{@user.username}" %>
 	<h1><%= @user.username %></h1>
 	<p><% if @user.website %><%= link_to "#{@user.website}", @user.website, target: "_blank" %><% else %>No Website<% end %></p>
@@ -8,6 +8,6 @@
 	<% end %>
 	<hr>
 </div>
-<div id="main">
+<div class="col-md-8">
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo ipsum aliquam interdum luctus. Ut tempus neque et porta lobortis. Cras eu lectus at orci aliquet porta tempus non leo. Nunc fermentum at erat sit amet vulputate. Sed quis ante vehicula, cursus felis eget, fringilla augue. Pellentesque non diam malesuada, commodo nisl eget, pulvinar diam. Pellentesque aliquet eu velit id iaculis. Duis sagittis dui at blandit ornare. Sed posuere ut mi in tristique. Pellentesque augue magna, vulputate tempor congue ut, porta quis felis. In nunc turpis, mattis quis semper quis, tincidunt vel nunc.</p>
 </div>

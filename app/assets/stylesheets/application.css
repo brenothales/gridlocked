@@ -25,11 +25,6 @@
 	width: 200px;
 	height: 200px;
 }
-#sidebar{
-	width: 20%;
-	float: left;
-}
-#main{
-	width: 70%;
-	float: left;
+#user-sidebar{
+    text-align: center;
 }
