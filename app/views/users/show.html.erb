@@ -1,13 +1,8 @@
-
-<div class="col-md-4" id="user-sidebar">
-	<%= image_tag (@user.userphoto) , class: "user-img profile", alt: "Image of #{@user.username}" %>
-	<h1><%= @user.username %></h1>
-	<% if @user == current_user %>
-		<p><%= link_to "Edit My Profile", edit_user_registration_path(current_user) %></p>
-	<% end %>
-	<hr>
-	<p><%= render "shared/footer" %></p>
-</div>
+<%= render "users/userside" %>
 <div class="col-md-8">
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo ipsum aliquam interdum luctus. Ut tempus neque et porta lobortis. Cras eu lectus at orci aliquet porta tempus non leo. Nunc fermentum at erat sit amet vulputate. Sed quis ante vehicula, cursus felis eget, fringilla augue. Pellentesque non diam malesuada, commodo nisl eget, pulvinar diam. Pellentesque aliquet eu velit id iaculis. Duis sagittis dui at blandit ornare. Sed posuere ut mi in tristique. Pellentesque augue magna, vulputate tempor congue ut, porta quis felis. In nunc turpis, mattis quis semper quis, tincidunt vel nunc.</p>
+	<% if !@posts.blank? %>
+		<%= render partial: "posts/post", collection: @posts %>
+	<% else %>
+		<h4>I have nothing to complain about. <%= link_to "Click here to start voicing some opinions", new_post_path %></h4>
+	<% end %>
 </div>

@@ -9,16 +9,22 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_url
     else
-      redirect_to root_url
+      redirect_to :back
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def destroy
-    @post = Post.find_by(params[:model_id])
+    @post = Post.find(params[:id])
     @post.destroy
     redirect_to :back
   end
-
+def new
+    @post = Post.new
+  end
   private
 
     def post_params

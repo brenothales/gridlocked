@@ -1,0 +1,21 @@
+var contentString = '<div id="content">'+
+	'<div id="siteNotice">'+
+	'</div>'+
+	'<h4 id="firstHeading" class="firstHeading"><%= post.title %></h4>'+
+	'<div id="bodyContent"><%= post.content %>'+
+	'</div>'+
+	'</div>';
+
+var infowindow = new google.maps.InfoWindow({
+	content: contentString
+});
+
+var marker = new google.maps.Marker({
+	position: new google.maps.LatLng(<%= post.location %>),
+	map: map,
+	title: '<%= post.title %>'
+});
+
+google.maps.event.addListener(marker, 'click', function() {
+	infowindow.open(map,marker);
+});

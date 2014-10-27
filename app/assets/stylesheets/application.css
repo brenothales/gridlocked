@@ -28,3 +28,11 @@
 #user-sidebar{
     text-align: center;
 }
+.post-time {
+	float: right;
+	clear: both;
+}
+
+  html, body {
+    height: 100%;
+  }

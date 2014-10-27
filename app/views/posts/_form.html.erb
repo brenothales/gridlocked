@@ -1,0 +1,48 @@
+<%= form_for @post do |f| %>
+	<%= f.hidden_field :location, placeholder: "Somewhere, USA",  class: "form-control" , id: "location"%>
+	<p>
+		<%= f.label "Who is this to?" %><br>
+		<%= f.text_field :title, placeholder: "To the vehicle over there", class: "form-control" %>
+	</p>
+	<p>
+		<%= f.label "What do you want to say?" %><br>
+		<%= f.text_area :content, placeholder: "What were you thinking?!", class: "form-control message" %>
+	</p>
+	<p>You have <B><SPAN class="countdown">240</SPAN></B> characters remaining.</p>
+	<p><%= f.submit "Post", class: "btn btn-large btn-primary" %></p>
+<% end %>
+<script>
+	function updateCountdown() {
+	    // 140 is the max message length
+	    var remaining = 240 - jQuery('.message').val().length;
+	    jQuery('.countdown').text(remaining);
+	}
+	$(document).ready(function($) {
+	    updateCountdown();
+	    $('.message').change(updateCountdown);
+	    $('.message').keyup(updateCountdown);
+	});
+if (navigator.geolocation) {
+   var timeoutVal = 10 * 1000 * 1000;
+   navigator.geolocation.getCurrentPosition(
+     displayPosition, 
+     displayError,
+     { enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
+   );
+ } else {
+   alert("Geolocation is not supported by this browser");
+ }
+
+ function displayPosition(position) {
+   $('input#location').val(position.coords.latitude + "," + position.coords.longitude);
+ }
+
+ function displayError(error) {
+   var errors = { 
+     1: 'Permission denied',
+     2: 'Position unavailable',
+     3: 'Request timeout'
+   };
+   alert("Error: " + errors[error.code]);
+ }
+</script>
