@@ -7,30 +7,19 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-        <%= link_to "project", root_path, {:class => "navbar-brand"} %>
+    <%= link_to "project", root_path, {:class => "navbar-brand"} %>
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-    <% if current_user %>
-      <ul class="nav navbar-nav navbar-right">
-<li><%= link_to "Create a Post", new_post_path %></li>
-        
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.username %> <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "My Profile", user_path(current_user) %></li>
-            <li><%= link_to "Edit User", edit_user_registration_path(current_user) %></li>
-            <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-          </ul>
-        </li>
-
-        
-    <% else %>
-      <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <li><a href="javascript:history.go(0)"><span class="glyphicon glyphicon-refresh"></span></a></li>
+        <li><%= link_to "", new_post_path, class: "glyphicon glyphicon-send" %></li>
+        <li><%= link_to "", edit_user_registration_path(current_user),class: "glyphicon glyphicon-tasks" %></li>
+        <li><%= link_to "", destroy_user_session_path, :method => :delete, class: "glyphicon glyphicon-off" %></li>
+      <% else %>
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <li><%= link_to "Sign In", new_user_session_path %></li>
-      </ul>
-    <% end %>
-
+      <% end %>
+    </ul>
   </div>
 </nav>
