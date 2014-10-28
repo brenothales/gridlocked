@@ -1,10 +1,21 @@
+<% if current_user === post.user %>
 var contentString = '<div id="content">'+
 	'<div id="siteNotice">'+
 	'</div>'+
 	'<h4 id="firstHeading" class="firstHeading"><%= post.title %></h4>'+
-	'<div id="bodyContent"><%= post.content %>'+
+	'<div id="bodyContent"><p><%= post.content %></p><small><%= link_to "Delete My Post", post_path(post.id), :method => :delete %></small>'+
 	'</div>'+
 	'</div>';
+<% else %>
+	var contentString = '<div id="content">'+
+	'<div id="siteNotice">'+
+	'</div>'+
+	'<h4 id="firstHeading" class="firstHeading"><%= post.title %></h4>'+
+	'<div id="bodyContent"><p><%= post.content %></p>'+
+	'</div>'+
+	'</div>';
+<% end %>
+
 
 var infowindow = new google.maps.InfoWindow({
 	content: contentString
