@@ -41,3 +41,8 @@
 .static-map{
 	text-align: center;
 }
+@media (max-width: 767px) {
+	.col-md-4 {
+		display: none;
+	}
+}
