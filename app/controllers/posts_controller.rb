@@ -22,9 +22,17 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to :back
   end
-def new
+
+  def new
     @post = Post.new
+    @user = User.find_by(params[:user_id])
   end
+
+  def show
+    @post = Post.find(params[:id])
+    @user = User.find_by(params[:user_id])
+  end
+
   private
 
     def post_params

@@ -11,7 +11,14 @@
 	<%= render "shared/header" %>
 	<div id="body">
 		<div class="row">
+		<% if current_user %>
+			<%= render "users/userside" %>
+			<div class="col-md-8">
 			<%= yield %>
+			</div>
+		<% else %>
+			<%= yield %>
+			<% end %>
 		</div>
 	</div>
 </body>

@@ -1,0 +1,32 @@
+<% if current_user == :user %>
+	var contentString = '<div id="content">'+
+		'<div id="siteNotice">'+
+		'</div>'+
+		'<h4 id="firstHeading" class="firstHeading"><%= :title %></h4>'+
+		'<div id="bodyContent"><p><%= :content %></p><p><%= link_to "See Full Post", post_path(:id) %> <small><%= link_to "", post_path(:id), :method => :delete, class: "glyphicon glyphicon-trash" %></small></p>'+
+		'</div>'+
+		'</div>';
+<% else %>
+	var contentString = '<div id="content">'+
+		'<div id="siteNotice">'+
+		'</div>'+
+		'<h4 id="firstHeading" class="firstHeading"><%= :title %></h4>'+
+		'<div id="bodyContent"><p><%= :content %></p>'+
+		'<p><%= link_to "See Full Post", post_path(:id) %></p></div>'+
+		'</div>';
+<% end %>
+
+
+var infowindow = new google.maps.InfoWindow({
+	content: contentString
+});
+
+var marker = new google.maps.Marker({
+	position: new google.maps.LatLng(<%= :location %>),
+	map: map,
+	title: '<%= :title %>'
+});
+
+google.maps.event.addListener(marker, 'click', function() {
+	infowindow.open(map,marker);
+});
