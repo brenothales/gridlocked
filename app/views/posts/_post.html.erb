@@ -21,8 +21,12 @@ var infowindow = new google.maps.InfoWindow({
 	content: contentString
 });
 
-var marker[] = new google.maps.Marker({
+var marker = new google.maps.Marker({
 	position: new google.maps.LatLng(<%= post.location %>),
 	map: map,
 	title: '<%= post.title %>'
+});
+
+google.maps.event.addListener(marker, 'click', function() {
+	infowindow.open(map,marker);
 });
