@@ -3,7 +3,7 @@
 		'<div id="siteNotice">'+
 		'</div>'+
 		'<h4 id="firstHeading" class="firstHeading"><%= post.title %></h4>'+
-		'<div id="bodyContent"><p><%= post.content %></p><p><%= link_to "See Full Post", post_path(post.id) %> <small><%= link_to "", post_path(post.id), :method => :delete, class: "glyphicon glyphicon-trash" %></small></p>'+
+		'<div id="bodyContent"><p><%= post.content %></p><p><%= link_to "See Full Post", post_path(post.id) %> | <small><%= link_to "", post_path(post.id), :method => :delete, class: "glyphicon glyphicon-trash" %></small></p>'+
 		'</div>'+
 		'</div>';
 <% else %>
