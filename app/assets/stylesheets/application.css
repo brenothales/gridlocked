@@ -103,6 +103,10 @@
 	.col-md-8 {
 		float: initial;
 	}
+	.map-img, .post-content {
+		width: 100%;
+		float: inherit;
+	}
 }
 @media (min-width: 991px) {
 	#mobileMenu {
