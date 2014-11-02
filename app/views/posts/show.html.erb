@@ -1,1 +1,9 @@
 <%= render "posts/postshow" %>
+<div class="comments">
+<div class="panel panel-default">
+	<ul class="list-group">
+		<%= render partial: "comments/comment", collection: @comments %>
+		<%= render "comments/comment_form" %>
+	</ul>
+</div>
+</div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "static#index"
   get "aboutus" => 'static#aboutus', :as => "aboutus"
 
@@ -7,4 +8,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :posts
+  resources :comments
 end
