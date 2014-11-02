@@ -1,5 +1,6 @@
 <div class="userNav">
 	<% if current_user %>
+		<li><%= link_to " Home", root_path, class: "glyphicon glyphicon-home" %></li>
 		<li><%= link_to " Refresh", "javascript:history.go(0)", class: "glyphicon glyphicon-refresh" %></li>
 		<li><%= link_to " Notifications", "#", class: "glyphicon glyphicon-flag" %></li>
 		<li><%= link_to " Create A Post", new_post_path, class: "glyphicon glyphicon-send" %></li>
