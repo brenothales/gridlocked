@@ -1,8 +1,8 @@
-<script>
-		var divwidth = $( ".static-map" ).width();
-		$(".static-map").append('<img class="postImg" src="https://maps.googleapis.com/maps/api/staticmap?zoom=16&size='+divwidth+'x300&scale=1&scale=2&maptype=streetview&markers=<%= @post.location %>&sensor=false[/IMG]">');
-</script>
 <h3><%= @post.title %></h3>
 <p><%= @post.content %></p>
 <p class="static-map"></p>
 <hr>
+<script>
+	var divwidth = $( ".static-map" ).width();
+	$(".static-map").append('<img class="postImg" src="https://maps.googleapis.com/maps/api/staticmap?zoom=16&size='+divwidth+'x300&scale=1&scale=2&maptype=streetview&markers=<%= @post.location %>&sensor=false[/IMG]">');
+</script>

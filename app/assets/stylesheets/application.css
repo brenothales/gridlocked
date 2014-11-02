@@ -17,7 +17,7 @@
  */
  
 #body {
-	margin-top: 65px;
+	padding-top: 65px;
 }
 .user-img{
 	border-radius: 50%;
@@ -29,6 +29,20 @@
 #user-sidebar{
 	text-align: center;
 	height: 100%;
+}
+.col-md-4 {
+	position: fixed;
+	display: inline;
+}
+.col-md-8 {
+	float: right;
+}
+#leftsidebar {
+	display: none;
+}
+#rightbody{
+	width: 100%
+}
 }
 .post-time {
 	float: right;
@@ -48,7 +62,9 @@
 	text-align: left;
 	list-style: none;
 }
-.postImg{
+#footer {
+	bottom: 0;
+	clear: both;
 }
 @media (max-width: 991px) {
 	.col-md-4 {
@@ -56,7 +72,7 @@
 		padding-top: 15px;
 		display: none;
 		width: 75%;
-		position:absolute; 
+		position: fixed; 
 		z-index:5;
 		background: white;
 	}
@@ -68,6 +84,9 @@
 	}
 	.navbar-header {
 		float: left;
+	}
+	.col-md-8 {
+		float: initial;
 	}
 }
 @media (min-width: 991px) {
