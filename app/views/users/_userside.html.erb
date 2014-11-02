@@ -1,7 +1,14 @@
-<div class="col-md-4" id="user-sidebar">
-	<%= image_tag (@user.userphoto) , class: "user-img profile", alt: "Image of #{@user.username}" %>
-	<h1><%= @user.username %></h1>
-	<%= render "shared/navlist" %>
-	<hr>
-	<p><%= render "shared/footer" %></p>
-</div>
+<% if current_user %>
+	<div class="col-md-4" id="user-sidebar">
+		<%= image_tag (@user.userphoto) , class: "user-img profile", alt: "Image of #{@user.username}" %>
+		<h1><%= @user.username %></h1>
+		<%= render "shared/navlist" %>
+		<hr>
+		<p><%= render "shared/footer" %></p>
+	</div>
+<% else %>
+	<div class="col-md-4" >
+		<li><%= link_to "Sign Up", new_user_registration_path %></li>
+		<li><%= link_to "Sign In", new_user_session_path %></li>
+	</div>
+<% end %>
