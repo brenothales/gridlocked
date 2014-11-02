@@ -1,21 +1,21 @@
-<% if current_user.id == post.user_id %>
-	var contentString = '<div id="content">'+
-		'<div id="siteNotice">'+
-		'</div>'+
-		'<h4 id="firstHeading" class="firstHeading"><%= post.title %><br><small><%= post.user.username %> posted <%= time_ago_in_words(post.created_at) %> ago</small></h4>'+
-		'<div id="bodyContent"><p><%= post.content %></p><p><small><%= link_to "Full Post", post_path(post.id) %> | <%= Comment.count(:post_id => post.id) %> Comments | <%= link_to "", post_path(post.id), :method => :delete, class: "glyphicon glyphicon-trash" %></small></p>'+
-		'</div>'+
-		'</div>';
-<% else %>
-	var contentString = '<div id="content">'+
-		'<div id="siteNotice">'+
-		'</div>'+
-		'<h4 id="firstHeading" class="firstHeading"><%= post.title %></h4>'+
-		'<div id="bodyContent"><p><%= post.content %></p>'+
-		'<p><small><%= link_to "See Full Post", post_path(post.id) %> | <%= Comment.count(:post_id => post.id) %> Comments</p></small></div>'+
-		'</div>';
+<% if post.created_at > 1.hour.ago %>
+
+	<% if current_user.id == post.user_id %>
+		var contentString = '<div id="content">'+
+			'<div id="siteNotice">'+
+			'</div>'+
+			'<h4 id="firstHeading" class="firstHeading"><%= post.title %><br><small><%= post.user.username %> posted <%= time_ago_in_words(post.created_at) %> ago</small></h4>'+
+			'<div id="bodyContent"><p><%= post.content %></p><p><small><%= link_to "Full Post", post_path(post.id) %> | <%= Comment.count(:post_id => post.id) %> Comments | <%= link_to "", post_path(post.id), :method => :delete, class: "glyphicon glyphicon-trash" %></small></p>'+
+			'</div>'+
+			'</div>';
+	<% else %>
+		var contentString = '<div id="content">'+
+			'<div id="siteNotice">'+
+			'</div>'+
+			'<h4 id="firstHeading" class="firstHeading"><%= post.title %></h4>'+
+			'<div id="bodyContent"><p><%= post.content %></p>'+
+			'<p><small><%= link_to "See Full Post", post_path(post.id) %> | <%= Comment.count(:post_id => post.id) %> Comments</p></small></div>'+
+			'</div>';
+	<% end %>
+	locations.push([contentString, <%= post.location %>]);
 <% end %>
-
-
-
-locations.push([contentString, <%= post.location %>]);
