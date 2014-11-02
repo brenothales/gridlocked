@@ -1,8 +1,6 @@
-<li class="list-group-item" id="comment_form">
-	<%= form_for @comment do |c| %>
-		<div class="input-group">
-			<%= c.text_field :content, :placeholder => "They said what?!", class: "form-control" %>
-			<span class="input-group-btn"><%= c.submit "Comment", class: "btn btn-default" %></span>
-		</div>
-	<% end %>
-</li>
+<%= form_for @comment do |c| %>
+	<div class="input-group">
+		<%= c.text_field :content, :placeholder => "They said what?!", class: "form-control" %>
+		<span class="input-group-btn"><%= c.submit "Post A Comment", class: "btn btn-default" %></span>
+	</div>
+<% end %>

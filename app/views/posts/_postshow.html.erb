@@ -1,7 +1,14 @@
-<h3><%= @post.title %> <small><%= time_ago_in_words(@post.created_at) %></small></h3>
-<p><%= @post.content %></p>
-<p class="static-map"></p>
-<hr>
+<h3><%= @post.user.username %> said <%= time_ago_in_words(@post.created_at) %> ago</h3>
+<div id="post-<%= @post.id %>">
+	<div class="map-img">
+		<p class="static-map"></p>
+	</div>
+	<div class="post-content">
+		<h4><%= @post.title %></h4>
+		<p><%= @post.content %></p>
+	</div>
+</div>
+<hr style="clear:both;">
 <script>
 	var divwidth = $( ".static-map" ).width();
 	$(".static-map").append('<img class="postImg" src="https://maps.googleapis.com/maps/api/staticmap?zoom=16&size='+divwidth+'x300&scale=1&scale=2&maptype=streetview&markers=<%= @post.location %>&sensor=false[/IMG]">');

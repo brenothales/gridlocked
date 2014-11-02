@@ -16,6 +16,8 @@
  *= require_bootstrap-theme
  */
  
+  html { height: 100% }
+  body { height: 100%; margin: 0; padding: 0 }
 #body {
 	padding-top: 65px;
 }
@@ -67,6 +69,14 @@
 }
 .comments {
 	padding-bottom: 2%;
+}
+.post-content {
+	width: 45%;
+	float: left;
+}
+.map-img {
+	width: 50%;
+	float: right;
 }
 @media (max-width: 991px) {
 	.col-md-4 {

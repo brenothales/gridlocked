@@ -1,1 +1,13 @@
-<li class="list-group-item" id="comment-<%= comment.id %>"><%= comment.user.username %> said <%= time_ago_in_words(comment.created_at) %>: <%= comment.content %></li>
+<div class="panel panel-default" id="comment-<%= comment.id %>">
+	<div class="panel-heading">
+		<h4 class="panel-title"><%= comment.user.username %> said <%= time_ago_in_words(comment.created_at) %> ago</h4>
+	</div>
+	<div class="panel-body">
+		<p><%= comment.content %></p>
+	</div>
+	<% if current_user == comment.user %>
+		<div class="panel-footer">
+			<%= link_to "", comment_path(comment.id), :method => :delete, class: "glyphicon glyphicon-trash" %>
+		</div>
+	<% end %>
+</div>
