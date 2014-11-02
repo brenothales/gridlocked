@@ -1,4 +1,4 @@
-<h3><%= @post.title %></h3>
+<h3><%= @post.title %> <small><%= time_ago_in_words(@post.created_at) %></small></h3>
 <p><%= @post.content %></p>
 <p class="static-map"></p>
 <hr>

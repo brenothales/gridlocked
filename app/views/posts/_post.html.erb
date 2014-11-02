@@ -2,7 +2,7 @@
 	var contentString = '<div id="content">'+
 		'<div id="siteNotice">'+
 		'</div>'+
-		'<h4 id="firstHeading" class="firstHeading"><%= post.title %></h4>'+
+		'<h4 id="firstHeading" class="firstHeading"><%= post.title %><br><small><%= time_ago_in_words(post.created_at) %></small></h4>'+
 		'<div id="bodyContent"><p><%= post.content %></p><p><small><%= link_to "Full Post", post_path(post.id) %> | <%= Comment.count(:post_id => post.id) %> Comments | <%= link_to "", post_path(post.id), :method => :delete, class: "glyphicon glyphicon-trash" %></small></p>'+
 		'</div>'+
 		'</div>';
