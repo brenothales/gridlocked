@@ -47,6 +47,8 @@
 	float: right;
 }
 #leftsidebar {
+	height: 100vh;
+	list-style: none;
 	display: none;
 }
 #rightbody{
