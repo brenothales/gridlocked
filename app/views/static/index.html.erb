@@ -45,9 +45,43 @@
 	<% else %>
 		<h4>No one is complaining. <%= link_to "Click here to start voicing some opinions", new_post_path %></h4>
 	<% end %>
-	<div id="map-container">
-		<div id="map-canvas" style="width:100%;height: 500px;"></div>
-	</div>
+	<div id="map-canvas"></div>
+
+
+
+	<% if current_user.sign_in_count < 2 %>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="myModalLabel">Don't Forget!!!</h4>
+					</div>
+					<div class="modal-body">
+						<p>If you are a frequent user, dont forget to add this app to your desktop favorites or add the app to your home screen</p>
+						<ul>
+							<li>Desktop<ul><li>PC: CTL-D</li><li>Mac: CMD-D</li></ul></li>
+							<li>Mobile<ul><li>iPhone: Share > Add to Home Screen</li><li>Android: Settings > Add to homescreen</li></ul></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var oldURL = document.referrer;
+			var pageURL = document.URL;
+			var explodeURL = pageURL.split("/");
+			var domain = explodeURL[0]+explodeURL[2];
+			var sign_in_url = domain+"/users/sign_in";
+			if (oldURL = sign_in_url) {
+				$(window).load(function(){
+					$('#myModal').modal('show');
+				});
+			};
+		</script>
+	<% end %>
+
 <% else %>
 	<h1>Static#index</h1>
 	<p>Find me in app/views/static/index.html.erb</p>

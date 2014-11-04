@@ -33,8 +33,11 @@
 	height: 100%;
 }
 .col-md-4 {
+	margin-top: -65px; 
+	padding-top: 65px; 
 	position: fixed;
 	display: inline;
+	height: 87vh;
 }
 .col-md-8 {
 	float: right;
@@ -51,8 +54,7 @@
 }
 #map-canvas {
 	width: 100%;
-	height: 100%;
-	position: relative;
+	height: 87vh;
 }
 .static-map{
 	text-align: center;

@@ -1,2 +1,2 @@
-<p><%= Comment.find_by(notification.comment_id).user.username %> commented on <%= link_to "your post", post_path(notification.post_id) %><br><%= link_to " Clear", notification_path(notification.id), method: :delete, class: "glyphicon glyphicon-remove" %></p>
+<p><%= link_to "", notification_path(notification.id), method: :delete, class: "glyphicon glyphicon-remove" %> <%= Comment.find_by(notification.comment_id).user.username %> commented on <%= link_to "your post", post_path(notification.post_id) %></p>
 <hr>
