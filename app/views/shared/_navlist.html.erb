@@ -2,7 +2,7 @@
 	<% if current_user %>
 		<li><%= link_to " Home", root_path, class: "glyphicon glyphicon-home" %></li>
 		<li><%= link_to " Refresh", "javascript:history.go(0)", class: "glyphicon glyphicon-refresh" %></li>
-		<li><%= link_to " Notifications", notifications_path, class: "glyphicon glyphicon-flag" %> <span class='badge'><%= Notification.where(:read => false).count(:user_id => current_user.id) %></span></li>
+		<li><%= link_to " Notifications", notifications_path, class: "glyphicon glyphicon-flag" %> <span class='badge'><%= Notification.where(:user_id => current_user.id).count(:read => false) %></span></li>
 		<li><%= link_to " Create A Post", new_post_path, class: "glyphicon glyphicon-send" %></li>
 		<li><%= link_to " Edit My Profile", edit_user_registration_path(current_user),class: "glyphicon glyphicon-tasks" %></li>
 		<li><%= link_to " Log Out", destroy_user_session_path, :method => :delete, class: "glyphicon glyphicon-off" %></li>

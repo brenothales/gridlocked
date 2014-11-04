@@ -13,11 +13,15 @@ class Comment < ActiveRecord::Base
   private
 
   def create_notification
-    Notification.create(
-      post_id: nil,
-      user_id: self.user_id,
-      comment_id: self,
-      read: false
-    )
+    @post = Post.find_by(self.post_id)
+    @user = User.find_by(@post.user_id).id
+    if @user != self.user_id
+      Notification.create(
+        post_id: self.post_id,
+        user_id: @user,
+        comment_id: self,
+        read: false
+      )
+    end
   end
 end

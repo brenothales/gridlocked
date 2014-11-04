@@ -19,6 +19,10 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
+    @notification = Notification.where(:comment_id => @comment.id)
+    if @notification.nil?
+      @notification.destroy
+    end
     @comment.destroy
     redirect_to :back
   end
