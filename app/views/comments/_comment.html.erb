@@ -1,6 +1,6 @@
 <div class="panel panel-default" id="comment-<%= comment.id %>">
 	<div class="panel-heading">
-		<h4 class="panel-title"><%= comment.user.username %> said <%= time_ago_in_words(comment.created_at) %> ago</h4>
+		<h4 class="panel-title"><%= link_to comment.user.username, user_path(comment.user.id) %> said <%= time_ago_in_words(comment.created_at) %> ago</h4>
 	</div>
 	<div class="panel-body">
 		<p><%= comment.content %></p>

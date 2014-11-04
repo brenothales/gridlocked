@@ -1,0 +1,19 @@
+<div class="usershowimg">
+	<p><%= image_tag (@user.userphoto) , class: "user-img profile", alt: "Image of #{@user.username}" %></p>
+	<h1><%= @user.username %>'s page</h1>
+    <hr>
+</div>
+<% if !@posts.blank? %>
+  <% for post in @posts %>
+    <p><%= @user.username %> said <%= link_to "'#{post.content}' to '#{post.title}'", post_path(post.id) %> <%= time_ago_in_words(post.created_at) %> ago<br></p>
+		<p class="static-map"></p>
+    <hr>
+    <script>
+		var divwidth = $( ".static-map" ).width();
+		divwidth = Math.round(divwidth/2);
+		$(".static-map").append('<img class="postImg" src="https://maps.googleapis.com/maps/api/staticmap?zoom=16&size='+divwidth+'x100&scale=1&scale=2&maptype=streetview&markers=<%= post.location %>&sensor=false[/IMG]">');
+	</script>
+  <% end %>
+<% else %>
+  
+<% end %>
