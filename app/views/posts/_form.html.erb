@@ -9,7 +9,7 @@
 		<%= f.text_area :content, placeholder: "What were you thinking?!", class: "form-control message" %>
 	</p>
 	<p>You have <B><SPAN class="countdown">240</SPAN></B> characters remaining.</p>
-	<p><%= f.submit "Post", class: "btn btn-large btn-primary" %></p>
+	<p><%= f.submit "Post", class: "btn btn-large btn-primary", id: "button" %></p>
 <% end %>
 <script>
 	function updateCountdown() {

@@ -40,9 +40,13 @@
 // none, bounce, rotateplane, stretch, orbit, 
 // roundBounce, win8, win8_linear or ios
 var current_effect = 'bounce'; // 
- 
-$('a').click(function(){
-run_waitMe(current_effect);
+<% if current_user %>
+	$('a').click(function(){
+		run_waitMe(current_effect);
+	});
+<% end %>
+$('#button').click(function(){
+	run_waitMe(current_effect);
 });
  
 function run_waitMe(effect){

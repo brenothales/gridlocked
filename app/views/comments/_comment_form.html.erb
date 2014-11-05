@@ -1,6 +1,6 @@
 <%= form_for @comment do |c| %>
 	<div class="input-group">
 		<%= c.text_field :content, :placeholder => "They said what?!", class: "form-control" %>
-		<span class="input-group-btn"><%= c.submit "Post A Comment", class: "btn btn-default" %></span>
+		<span class="input-group-btn"><%= c.submit "Post A Comment", class: "btn btn-default", id: "button" %></span>
 	</div>
 <% end %>
