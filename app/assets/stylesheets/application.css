@@ -100,8 +100,8 @@
 		background: white;
 	}
 	.profile{
-		width: 30%;
-		height: 15%;
+	    width: 30% !important;
+	    height: auto !important;
 	}
 	.navbar-toggle {
 		float: left;
