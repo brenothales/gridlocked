@@ -21,7 +21,19 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    @comment = Comment.where(:post_id => @post.id).to_a
+    @notification = Notification.where(:post_id => @post.id).to_a
+
     @post.destroy
+
+    if @comment.nil?
+      @comment.destroy
+    end
+
+    if @notification.nil?
+      @notification.destroy
+    end
+
     redirect_to :back
   end
 
