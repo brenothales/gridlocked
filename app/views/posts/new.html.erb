@@ -1,2 +1,23 @@
 <h1>Something to complain about?</h1>
 <%= render "posts/form" %>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">Are you driving?</h4>
+			</div>
+			<div class="modal-body">
+				<p>If so, please hand the phone over to your co-pilot.</p>
+				<p>No co-pilot? It can wait.</p>
+				<p>We don't like the idea of driving while distracted so please don't do it.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(window).load(function(){
+		$('#myModal').modal('show');
+	});
+</script>

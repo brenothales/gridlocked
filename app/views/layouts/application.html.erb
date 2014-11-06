@@ -37,40 +37,26 @@
 		});
 
  
-// none, bounce, rotateplane, stretch, orbit, 
-// roundBounce, win8, win8_linear or ios
-var current_effect = 'bounce'; // 
-<% if current_user %>
-	$('a').click(function(){
-		run_waitMe(current_effect);
-	});
-<% end %>
-$('#button').click(function(){
-	run_waitMe(current_effect);
-});
- 
-function run_waitMe(effect){
-	$('body').waitMe({
-		//none, rotateplane, stretch, orbit, roundBounce, win8, win8_linear, ios, facebook, rotation, timer, pulse.
-		effect: 'bounce',
+		var current_effect = 'bounce';
+		<% if current_user %>
+			$('a').click(function(){
+				run_waitMe(current_effect);
+			});
+		<% end %>
+		$('#button').click(function(){
+			run_waitMe(current_effect);
+		});
 		 
-		//place text under the effect (string).
-		text: '',
-		 
-		//background for container (string).
-		bg: 'rgba(255,255,255,0.7)',
-		 
-		//color for background animation and text (string).
-		color: '#000',
-		 
-		//change width for elem animation (string).
-		sizeW: '',
-		 
-		//change height for elem animation (string).
-	sizeH: ''
-	});
-}
-    
-</script>
+		function run_waitMe(effect){
+			$('body').waitMe({
+				effect: 'bounce',
+				text: '',
+				bg: 'rgba(255,255,255,0.7)',
+				color: '#000',
+				sizeW: '',
+				sizeH: ''
+			});
+		}
+	</script>
 </body>
 </html>
