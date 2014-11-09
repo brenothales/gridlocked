@@ -1,6 +1,4 @@
-<h2>Sign in</h2>
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-	<%= devise_error_messages! %>
+<%= form_for("user", :url => user_session_path) do |f| %>
 
 	<p><%= f.label :email %><br />
 	<%= f.email_field :email, class: "form-control" %></p>
@@ -10,5 +8,3 @@
 
 	<p><%= f.submit "Sign In", class: "btn btn-primary", id: "button" %></p>
 <% end %>
-
-<%= render "devise/shared/links" %>

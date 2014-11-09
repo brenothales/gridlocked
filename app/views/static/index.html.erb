@@ -83,6 +83,19 @@
 	<% end %>
 
 <% else %>
-	<h1>Static#index</h1>
-	<p>Find me in app/views/static/index.html.erb</p>
+<div class="jumbotron" id="jumbotron">
+	<h1 id="logo">Static#index</h1>
+</div>
+<div class="col-md-6 index-6">
+	<h4>Annoying People On The Road?</h4>
+	<h4>Starting to Lose Your Voice?</h4>
+	<h4>Let Those Drives Know What Your Thinking</h4>
+</div>
+<div class="col-md-6 index-6">
+	<h3>Already a User? Sign In Here</h3>
+	<%= render "devise/sessions/new" %>
+</div>
+<div>
+	<%= render "shared/indexfooter" %>
+</div>
 <% end %>

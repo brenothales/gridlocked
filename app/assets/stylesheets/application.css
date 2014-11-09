@@ -44,6 +44,13 @@
 	height: 87vh;
 	border-right: 1px solid #eeeeee;
 }
+.index-6 {
+	padding-bottom: 2%;
+}
+.index-6 h4 {
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
 .col-md-8 {
 	float: right;
 }
@@ -90,6 +97,22 @@
 .userNav li {
 	padding-bottom: 5%;
 }
+#logo {
+	text-align: center;
+}
+#jumbotron {
+	background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+	width: 100%;
+	height: 300px;
+	margin-top: -15px;
+	margin-bottom: 15px;
+	left: 0;
+	right: 0;
+}
+
 @media (max-width: 991px) {
 	.col-md-4 {
 		margin-top: -15px;

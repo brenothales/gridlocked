@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   root "static#index"
-  get "aboutus" => 'static#aboutus', :as => "aboutus"
+  get "privacy" => 'static#privacy', :as => "privacy"
 
-  get "contactus" =>'static#contactus', :as  => "contactus"
+  get "terms" =>'static#terms', :as  => "terms"
 
   devise_for :users
   resources :users
