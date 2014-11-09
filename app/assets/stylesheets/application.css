@@ -101,7 +101,7 @@
 	text-align: center;
 }
 #jumbotron {
-	background-image: url("background.jpg");
+	background-image: asset-data-url("background.jpg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
