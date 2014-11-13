@@ -83,25 +83,31 @@
 	<% end %>
 
 <% else %>
-<div class="jumbotron" id="jumbotron">
-	<h1 id="logo">Static#index</h1>
-</div>
-<div class="row">
-	<div class="col-md-6 index-6">
-		<h4>Annoying People On The Road?</h4>
-		<h4>Starting to Lose Your Voice?</h4>
-		<h4>Let Those Drives Know What Your Thinking</h4>
+	<div class="jumbotron" id="jumbotron">
+		<h1 id="logo">Static#index</h1>
 	</div>
-</div>
-<div class="row">
-	<div class="col-md-6 index-6">
+	<div class="row index">
+		<div class="col-md-6 index-6">
+			<h4>Annoying People On The Road?</h4>
+			<h4>Starting to Lose Your Voice?</h4>
+			<h4>Let Those Drives Know What Your Thinking</h4>
+		</div>
 	</div>
-	<div class="col-md-6 index-6">
-		<h3>Already a User? Sign In Here</h3>
-		<%= render "devise/sessions/new" %>
+	<div class="row index" id='blue'>
+		<div class="col-md-6 index-6">
+		</div>
+		<div class="col-md-6 index-6">
+			<h3>Already a User? Sign In Here</h3>
+			<%= render "devise/sessions/new" %>
+		</div>
 	</div>
-</div>
-<div>
-	<%= render "shared/indexfooter" %>
-</div>
+	<div class="row index" id='beige'>
+		<div class="col-md-2">
+			<%= render "shared/indexfooter" %>
+		</div>
+		<div class="col-md-8">
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
 <% end %>
