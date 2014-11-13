@@ -131,11 +131,11 @@ body {
 }
 #beige {
 	background: #e8e5e3;
+	border: none;
+	box-shadow: none;
 }
 #nav {
 	background: white;
-	border: white;
-	box-shadow: none;
 }
 #jumbotron {
 	display: table;
