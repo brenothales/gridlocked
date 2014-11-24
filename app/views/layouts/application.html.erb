@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html style="height: 100%;">
 <head>
-	<title>Project</title>
+	<title>Gridlocked</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -23,9 +23,12 @@
 					<%= yield %>
 				</div>
 			<% else %>
+				<div id="jumbotron">
 				<%= render "shared/leftside" %>
-				<div class="col-md-8" id="rightbody">
+				<div class="col-md-8" id="rightbody"> 
+					
 					<%= yield %>
+				</div>
 				</div>
 			<% end %>
 		</div>

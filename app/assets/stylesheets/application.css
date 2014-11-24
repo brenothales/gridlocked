@@ -112,11 +112,7 @@ body {
 .userNav li {
 	padding-bottom: 5%;
 }
-#jumbotron h1 {
-	text-align: center;
-	display: table-cell;
-	vertical-align: middle;
-	margin-bottom: 10px;
+#largelogo h1 {
 }
 .index {
 	margin-right: -15px;
@@ -124,6 +120,7 @@ body {
 	margin-left: -15px;
 }
 #white {
+	padding: 2%;
 	background: white;
 }
 #blue {
@@ -134,19 +131,23 @@ body {
 	border: #e8e5e3;
 	box-shadow: none;
 }
+#largelogo {
+	height: 400px;
+	background: none;
+}
 #jumbotron {
 	display: table;
 	background-image: url('background.jpg');
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: absolute;
+    background-attachment:fixed;
     background-size: cover;
 	width: 100%;
-	height: 400px;
 	margin-top: -15px;
 	margin-bottom: -15px;
-	left: 0;
+	/*left: 0;
 	right: 0;
-	margin-right: -15px;
+	margin-right: -15px;*/
 }
 
 @media (max-width: 768px) {
