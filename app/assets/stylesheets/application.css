@@ -90,7 +90,6 @@ body {
 	list-style: none;
 }
 #footer {
-   position:absolute;
    bottom:0;
    width:100%;
 	text-align: center;
@@ -142,6 +141,8 @@ body {
 #largelogo {
 	height: 400px;
 	background: none;
+	text-align: center;
+	vertical-align: middle;
 }
 #jumbotron {
 	display: table;
@@ -157,7 +158,11 @@ body {
 	right: 0;
 	margin-right: -15px;*/
 }
-
+.accountDiv {
+	width: 75%;
+	margin: 10% auto;
+	border-radius: 2%;
+}
 @media (max-width: 768px) {
 	.col-md-4 {
 		margin-top: -15px;
