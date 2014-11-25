@@ -164,6 +164,9 @@ body {
 	border-radius: 2%;
 }
 @media (max-width: 768px) {
+.accountDiv {
+	width: 100%;
+}
 	.col-md-4 {
 		margin-top: -15px;
 		padding-top: 15px;
