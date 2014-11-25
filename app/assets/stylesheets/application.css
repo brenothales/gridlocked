@@ -146,7 +146,7 @@ body {
 }
 #jumbotron {
 	display: table;
-	background-image: url(asset-path("background.jpg"));
+	background-image: url('background.jpg');
     background-repeat: no-repeat;
     background-position: absolute;
     background-attachment:fixed;
