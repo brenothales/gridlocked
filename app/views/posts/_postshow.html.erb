@@ -6,7 +6,9 @@
 	<div class="post-content">
 		<h4>Title: <%= @post.title %></h4>
 		<p>Content:<br><%= @post.content %></p>
+		<% if current_user && current_user == @post.user %>
 		<p><%= link_to " Delete this post", post_path(@post.id), :method => :delete, class: "glyphicon glyphicon-trash" %></p>
+		<% end %>
 	</div>
 </div>
 <hr style="clear:both;">
