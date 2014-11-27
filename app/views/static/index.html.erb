@@ -94,19 +94,38 @@
 			<h4>Starting to Lose Your Voice?</h4>
 			<h4>Let Those Drives Know What Your Thinking</h4>
 		</div>
-	</div>
-	<div class="row index" id='blue'>
-		<div class="col-md-6 index-6">
-		</div>
 		<div class="col-md-6 index-6">
 			<h3>Already a User? Sign In Here</h3>
 			<%= render "devise/sessions/new" %>
 		</div>
 	</div>
-	<div class="row index navbar-static-bottom" id='beige'>
-		<div class="col-md-12">
-			<%= render "shared/indexfooter" %>
+	<div class="row index" id='blue'>
+		<div class="col-md-6 index-6">
+			<p>Blast terrible drives as you see them</p>
+			<p>Each blast remains visible for a couple of hours so everyone can see whats going on</p>
+			<p>Only see blasts that are around you</p>
+		</div>
+		<div class="col-md-6 index-6">
+			<div class="centered">
+				<p><%= image_tag "phone.png", alt: "Pin on phone", id: "phoneimage" %></p>
+			</div>
 		</div>
 	</div>
+	<div class="row index" id='white'>
+		<div class="centered">
+			<h3>About Us</h3>
+			<div class="col-md-6 index-6">
+				<p>img evan</p>
+				<p>Evan McCullough<br>
+				<small>Founder and CEO</small></p>
+			</div>
+			<div class="col-md-6 index-6">
+				<p>img emily</p>
+				<p>Emily Leung<br>
+				<small>CAO and CCO</small></p>
+			</div>
+		</div>
+	</div>
+	<%= render "shared/indexfooter" %>
 </div>
 <% end %>
