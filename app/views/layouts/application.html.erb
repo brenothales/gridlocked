@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
+<html>
 <head>
 	<title>Gridlocked</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -21,7 +21,7 @@
 	<script type="text/javascript">
 	</script>
 </head>
-<body style="height: 100%;">
+<body>
 	<%= render "shared/header" %>
 	<div id="body">
 		<div class="row">
@@ -31,17 +31,15 @@
 					<%= yield %>
 				</div>
 			<% else %>
+					<%= render "shared/leftside" %>
 				<div id="jumbotron">
-				<%= render "shared/leftside" %>
-				<div class="col-md-8" id="rightbody"> 
-					
-					<%= yield %>
-				</div>
+					<div class="col-md-8" id="rightbody"> 
+						<%= yield %>
+					</div>
 				</div>
 			<% end %>
 		</div>
 	</div>
-
 	<script type="text/javascript">
 		$("#mobileMenu").click(function(){
 			$( ".col-md-4" ).toggle( "slide" );

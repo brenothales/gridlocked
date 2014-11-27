@@ -81,11 +81,8 @@
 			};
 		</script>
 	<% end %>
-
 <% else %>
-<div class="body">
-	
-	<div class="jumbotron" id="largelogo">
+	<div id="largelogo">
 		<h1 id="logo"><%= image_tag "logo.png", alt: "Gridlocked Logo" %></h1>
 	</div>
 	<div class="row index" id="white">
@@ -101,9 +98,9 @@
 	</div>
 	<div class="row index" id='blue'>
 		<div class="col-md-6 index-6">
-			<p>Blast terrible drives as you see them</p>
-			<p>Each blast remains visible for a couple of hours so everyone can see whats going on</p>
-			<p>Only see blasts that are around you</p>
+			<h4>Blast terrible drives as you see them</h4>
+			<h4>Each blast remains visible for a couple of hours so everyone can see whats going on</h4>
+			<h4>Only see blasts that are around you</h4>
 		</div>
 		<div class="col-md-6 index-6">
 			<div class="centered">
@@ -127,5 +124,4 @@
 		</div>
 	</div>
 	<%= render "shared/indexfooter" %>
-</div>
 <% end %>
