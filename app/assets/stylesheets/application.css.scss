@@ -19,7 +19,8 @@
  */
  
 html {
-	min-height: 100%;
+	position: relative;
+	height: 100%;
 }
 body {
 	height: 100%; 
@@ -90,12 +91,13 @@ body {
 	list-style: none;
 }
 #footer {
-   bottom:0;
+  position: absolute;
+  bottom: 0;
    width:100%;
 	text-align: center;
-	bottom: 0;
 	clear: both;
 	margin-top: 1%;
+	padding: 1%;
 }
 #footer ul {
 	list-style-type: none;
