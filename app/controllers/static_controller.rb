@@ -3,7 +3,7 @@ class StaticController < ApplicationController
   	@users = User.all
   	@user = current_user
     if @user
-    	@posts = Post.near([request.location.latitude, request.location.longitude] ,10)
+    	@posts = Post.near([request.location.latitude, request.location.longitude] ,25)
     end
   end
 
