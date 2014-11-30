@@ -1,6 +1,8 @@
 <%= form_for @post do |f| %>
 	<div class="form-inline">
-		<p><%= f.radio_button :location, class: "form-control", id: "location" %> Current Location or <%= f.text_field :location, placeholder: "Somewhere, USA", class: "form-control" %></p>
+		<p><%= radio_button_tag "current", "1", class: "form-control", id: "current"  %> Current Location or <%= f.text_field :address, placeholder: "Somewhere, USA", class: "form-control", id: "address"%></p>
+		<%= f.hidden_field :longitude, class: "form-control", id: "longitude" %>
+		<%= f.hidden_field :longitude, class: "form-control", id: "latitude" %>
 	</div>
 	<p>
 		<%= f.label "Who is this to?" %><br>
@@ -34,8 +36,13 @@
 		alert("Geolocation is not supported by this browser");
 	}
 	function displayPosition(position) {
-		$('input#location').val(position.coords.latitude + "," + position.coords.longitude);
+			$('#latitude').val(position.coords.latitude);
+			$('#longitude').val(position.coords.longitude);
 	}
+		if ($('#current').val() !== 1) {
+			$('#latitude').val("");
+			$('#longitude').val("");
+		};
 
 	function displayError(error) {
 		var errors = { 

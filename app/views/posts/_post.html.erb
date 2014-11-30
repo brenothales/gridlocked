@@ -17,5 +17,5 @@
 			'<p><small><%= link_to "See Full Post", post_path(post.id) %> | <%= Comment.count(:post_id => post.id) %> Comments</p></small></div>'+
 			'</div>';
 	<% end %>
-	locations.push([contentString, <%= post.location %>]);
+	locations.push([contentString, "<%= post.latitude %>,<%= post.longitude %>"]);
 <% end %>
