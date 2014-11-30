@@ -11,5 +11,7 @@ class Post < ActiveRecord::Base
   validates :content, presence: true
   validates :address, presence: true
 
+  self.per_page = 15
+
   default_scope -> { order('created_at DESC') }
 end
