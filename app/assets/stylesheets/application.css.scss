@@ -90,11 +90,8 @@ body {
 	list-style: none;
 }
 #footer {
-	position: absolute;
-	bottom: 0;
 	width:100%;
 	text-align: center;
-	clear: both;
 	height: 60px;
 	padding-top: 1.5%;
 }
@@ -158,13 +155,15 @@ body {
 	width: 75%;
 	margin: 10% auto;
 	border-radius: 2%;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 .centered {
 	text-align: center;
 }
 #phoneimage {
-	height: 5%;
-	width: auto !important;
+	width: 100%;
+	height: auto !important;
 }
 #logo {
 	width: 100%;
@@ -173,6 +172,10 @@ body {
 @media (max-width: 768px) {
 	.accountDiv {
 		width: 100%;
+	}
+	#white {
+		padding-left: 10%;
+		padding-right: 10%;
 	}
 	.col-md-4 {
 		margin-top: -15px;
@@ -202,6 +205,13 @@ body {
 	.map-img, .post-content {
 		width: 100%;
 		float: inherit;
+	}
+	#footer{
+		margin-bottom: 7.5%;
+	}
+	
+	#footer li {
+		display: inherit;
 	}
 }
 @media (min-width: 768px) {
