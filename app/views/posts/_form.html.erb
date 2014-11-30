@@ -1,9 +1,8 @@
 <%= form_for @post do |f| %>
-	<div class="form-inline">
-		<p><%= radio_button_tag "current", "1", class: "form-control", id: "current"  %> Current Location or <%= f.text_field :address, placeholder: "Somewhere, USA", class: "form-control", id: "address"%></p>
-		<%= f.hidden_field :longitude, class: "form-control", id: "longitude" %>
-		<%= f.hidden_field :longitude, class: "form-control", id: "latitude" %>
-	</div>
+	<p>
+		<%= f.label "Where Are You?" %><br>
+		<%= f.text_field :address, placeholder: "Somewhere, USA", class: "form-control", id: "address"%>
+	</p>
 	<p>
 		<%= f.label "Who is this to?" %><br>
 		<%= f.text_field :title, placeholder: "The vehicle over there", class: "form-control" %>
@@ -25,24 +24,8 @@
 		$('.message').change(updateCountdown);
 		$('.message').keyup(updateCountdown);
 	});
-	if (navigator.geolocation) {
-		var timeoutVal = 10 * 1000 * 1000;
-		navigator.geolocation.getCurrentPosition(
-			displayPosition, 
-			displayError,
-			{ enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
-		);
-	} else {
-		alert("Geolocation is not supported by this browser");
-	}
-	function displayPosition(position) {
-			$('#latitude').val(position.coords.latitude);
-			$('#longitude').val(position.coords.longitude);
-	}
-		if ($('#current').val() !== 1) {
-			$('#latitude').val("");
-			$('#longitude').val("");
-		};
+	
+	$('#address').val(@current_location);
 
 	function displayError(error) {
 		var errors = { 
