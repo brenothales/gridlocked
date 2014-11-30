@@ -20,5 +20,6 @@ module Project
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.serve_static_assets = true
+    config.exceptions_app = self.routes
   end
 end
