@@ -221,6 +221,11 @@ body {
 		display: inherit;
 	}
 }
+.commentimg {
+	height: 35px;
+	background: white;
+	border-radius: 50%;
+}
 @media (min-width: 768px) {
 	#mobileMenu {
 		display: none;
