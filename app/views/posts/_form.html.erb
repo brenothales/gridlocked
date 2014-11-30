@@ -1,7 +1,7 @@
 <%= form_for @post do |f| %>
 	<p>
 		<%= f.label "Where Are You?" %><br>
-		<%= f.text_field :address, placeholder: "Somewhere, USA", class: "form-control", id: "address"%>
+		<%= f.text_field :address, placeholder: "Somewhere, USA", value: "#{request.location.latitude},#{request.location.longitude}", class: "form-control", id: "address"%>
 	</p>
 	<p>
 		<%= f.label "Who is this to?" %><br>
@@ -24,8 +24,7 @@
 		$('.message').change(updateCountdown);
 		$('.message').keyup(updateCountdown);
 	});
-	
-	$('#address').val(@current_location);
+
 
 	function displayError(error) {
 		var errors = { 

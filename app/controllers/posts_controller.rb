@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    @current_location = "#{request.location.latitude},#{request.location.longitude}"
+    
     if @post.save
       redirect_to root_url
     else
