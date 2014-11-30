@@ -2,7 +2,10 @@ class StaticController < ApplicationController
   def index
   	@users = User.all
   	@user = current_user
-  	@posts = Post.near([@user.current_sign_in_ip] ,10)
+    if @user
+      
+    	@posts = Post.near([@user.current_sign_in_ip] ,10)
+    end
   end
 
   def aboutus
