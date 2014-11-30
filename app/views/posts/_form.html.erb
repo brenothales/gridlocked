@@ -1,7 +1,42 @@
+<script src = "https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+if (navigator.geolocation) {
+		var timeoutVal = 10 * 1000 * 1000;
+		navigator.geolocation.getCurrentPosition(
+			displayPosition, 
+			displayError,
+			{ enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
+		);
+	} else {
+		alert("Geolocation is not supported by this browser");
+	}
+	function displayPosition(position) {
+		var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+		var geocoder = new google.maps.Geocoder();
+		geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+			if (status !== google.maps.GeocoderStatus.OK) {
+				alert(status);
+			}
+			if (status == google.maps.GeocoderStatus.OK) {
+				console.log(results);
+				var address = (results[0].formatted_address);
+				$('#address').val(address);
+			}
+		});
+	}
+	function displayError(error) {
+		var errors = { 
+			1: 'Permission denied',
+			2: 'Position unavailable',
+			3: 'Request timeout'
+		};
+		alert("Error: " + errors[error.code]);
+	}
+</script>
 <%= form_for @post do |f| %>
 	<p>
-		<%= f.label "Where Are You?" %><br>
-		<%= f.text_field :address, placeholder: "Somewhere, USA", value: "#{request.location.address}", class: "form-control", id: "address"%>
+		<%= f.label "Where are you?" %><br>
+		<%= f.text_field :address, placeholder: "Loading Current Location...", class: "form-control", id: "address"%>
 	</p>
 	<p>
 		<%= f.label "Who is this to?" %><br>
@@ -15,6 +50,7 @@
 	<p><%= f.submit "Post", class: "btn btn-large btn-primary", id: "button" %></p>
 <% end %>
 <script>
+	
 	function updateCountdown() {
 		var remaining = 240 - jQuery('.message').val().length;
 		jQuery('.countdown').text(remaining);
@@ -25,13 +61,5 @@
 		$('.message').keyup(updateCountdown);
 	});
 
-
-	function displayError(error) {
-		var errors = { 
-			1: 'Permission denied',
-			2: 'Position unavailable',
-			3: 'Request timeout'
-		};
-		alert("Error: " + errors[error.code]);
-	}
+	
 </script>

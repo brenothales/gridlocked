@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    
+
     if @post.save
       redirect_to root_url
     else
@@ -40,6 +40,10 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @user = User.find_by(params[:user_id])
+  end
+
+  def method_name
+    @myLocation = Geocoder.coordinates(["myLocation"])
   end
 
   private
